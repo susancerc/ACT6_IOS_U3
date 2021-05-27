@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(NavegacionApp());
+void main() => runApp(CervApp());
 
-class NavegacionApp extends StatefulWidget {
+class CervApp extends StatefulWidget {
   @override
-  _NavegacionAppState createState() => _NavegacionAppState();
-} //Navegacion App
+  _CervAppState createState() => _CervAppState();
+} //fin CervApp = cervantes app
 
-class _NavegacionAppState extends State<NavegacionApp> {
+class _CervAppState extends State<CervApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(debugShowCheckedModeBanner: false, theme: ThemeData(brightness: Brightness.dark), home: Principal());
-  }
-} // Estado de la App
+  }// widget build
+} // fin cerv app
 
-class Principal extends StatefulWidget {
+class Ksita extends StatefulWidget {
   @override
-  _PrincipalState createState() => _PrincipalState();
-} //Clase Principal
-
-class _PrincipalState extends State<Principal> with SingleTickerProviderStateMixin {
+  _KsitaState createState() => _KsitaState();
+} // clase casita= ksita
+class _KsitaState extends State<Ksita> with SingleTickerProviderStateMixin {
   TabController controller;
   void initState() {
     super.initState();
@@ -27,9 +26,8 @@ class _PrincipalState extends State<Principal> with SingleTickerProviderStateMix
       length: 5,
       vsync: this,
       initialIndex: 0,
-    );
-  } //Iniciar Estado con 5 Tabs
-
+    );// fin de controller
+  } // fin del void
   Widget card(String text) {
     return Card(
       color: Colors.red[200],
@@ -40,18 +38,16 @@ class _PrincipalState extends State<Principal> with SingleTickerProviderStateMix
             child: Text(
           text,
           textAlign: TextAlign.center,
-        )),
-      ),
-    );
-  } //Tarjeta
-
+        )),// fin center y text
+      ),// fin del container
+    );// fin del card
+  } // fin de widget
   Tab tab(String text, Icon icon) {
     return Tab(
       icon: icon,
       text: text,
-    );
-  } //Texto e icono
-
+    );// fin de tab
+  } //fin del texto e icono
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +56,7 @@ class _PrincipalState extends State<Principal> with SingleTickerProviderStateMix
         centerTitle: true,
         backgroundColor: Theme.of(context).canvasColor,
         elevation: 0.0,
-      ), // AppBar
+      ), // fin de AppBar
       body: TabBarView(
         controller: controller,
         children: <Widget>[
@@ -69,8 +65,8 @@ class _PrincipalState extends State<Principal> with SingleTickerProviderStateMix
           card("Menu"),
           card("Cliente"),
           card("Ajustes"),
-        ],
-      ),
+        ],// fin <widget>
+      ),// fin de body tap bar
       bottomNavigationBar: TabBar(
         controller: controller,
         isScrollable: true,
@@ -80,9 +76,8 @@ class _PrincipalState extends State<Principal> with SingleTickerProviderStateMix
           tab("Menu", Icon(Icons.list)),
           tab("Cliente", Icon(Icons.account_circle_rounded)),
           tab("Ajustes", Icon(Icons.settings_rounded)),
-        ],
-      ),
-    ); //Scaffold
-  } //Constructor
-
-} //Clase _PrincipalState
+        ],// fin de <widget>
+      ),// fin bottomnavigation
+    ); //fin del scaffold
+  } //fin de constructor
+} // fin de mi ksita
